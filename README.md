@@ -1,28 +1,20 @@
 def main(text):
     text = text.replace(" ", "")
-    if len(text) == 5 and (int(text[:2]) and int(text[-2:])) <= 10:
-        if "*" in text:
-        elif "+" in text:
-            decision = int(text[:2]) + int(text[-2:])
-        elif "-" in text:
-            decision = int(text[:2]) - int(text[-2:])
-        elif "/" in text:
-            decision = int(text[:2]) / int(text[-2:])
-        return decision
-    elif len(text) == 3:
-        if "*" in text:
-            decision = int(text[0]) * int(text[-1])
-        elif "+" in text:
-            decision = int(text[0]) + int(text[-1])
-        elif "-" in text:
-            decision = int(text[0]) - int(text[-1])
-        elif "/" in text:
-            decision = int(text[0]) / int(text[-1])
-        return decision
+    b = "+*-/"
+    decision = "throws Exception"
+    for i in b:
+        if text.find(i) > -1  and text.count(i) == 1 and int(text[:text.find(i)]) <= 10 and int(text[text.find(i) + 1:]) <= 10:
+            if "+" in text:
+                decision = int(text[:text.find("+")]) + int(text[text.find("+") + 1:])   
+            elif "*" in text:
+                ecision = int(text[:text.find("*")]) * int(text[text.find("*") + 1:])    
+            elif "-" in text:
+                decision = int(text[:text.find("-")]) - int(text[text.find("-") + 1:])     
+            elif "/" in text:
+                decision = int(text[:text.find("/")]) / int(text[text.find("/") + 1:])        
+                decision = int(decision)
     else:
-        return "throws Exception"
-
+        return decision
 
 print(main(input()))
-
 
