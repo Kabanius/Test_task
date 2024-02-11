@@ -7,7 +7,7 @@ def main(text):
             if "+" in text:
                 decision = int(text[:text.find("+")]) + int(text[text.find("+") + 1:])   
             elif "*" in text:
-                ecision = int(text[:text.find("*")]) * int(text[text.find("*") + 1:])    
+                decision = int(text[:text.find("*")]) * int(text[text.find("*") + 1:])    
             elif "-" in text:
                 decision = int(text[:text.find("-")]) - int(text[text.find("-") + 1:])     
             elif "/" in text:
